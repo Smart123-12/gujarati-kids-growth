@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-fredoka bg-kids-cream text-slate-800 antialiased overflow-x-hidden selection:bg-kids-yellow;
+    font-family: 'Fredoka', 'Baloo 2', cursive, sans-serif;
+  }
+}
+
+@layer components {
+  /* Cute Kid-friendly bubbly buttons */
+  .btn-kids-yellow {
+    @apply px-6 py-3 font-bold text-lg rounded-3xl bg-kids-yellow border-2 border-slate-800 shadow-kids-yellow hover:translate-y-1 hover:shadow-kids-active active:translate-y-2 transition-all duration-100 ease-in-out cursor-pointer select-none inline-flex items-center justify-center gap-2;
+  }
+  
+  .btn-kids-orange {
+    @apply px-6 py-3 font-bold text-lg rounded-3xl bg-kids-orange text-white border-2 border-slate-800 shadow-kids-orange hover:translate-y-1 hover:shadow-kids-active active:translate-y-2 transition-all duration-100 ease-in-out cursor-pointer select-none inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-kids-blue {
+    @apply px-6 py-3 font-bold text-lg rounded-3xl bg-kids-blue text-white border-2 border-slate-800 shadow-kids-blue hover:translate-y-1 hover:shadow-kids-active active:translate-y-2 transition-all duration-100 ease-in-out cursor-pointer select-none inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-kids-pink {
+    @apply px-6 py-3 font-bold text-lg rounded-3xl bg-kids-pink text-white border-2 border-slate-800 shadow-kids-pink hover:translate-y-1 hover:shadow-kids-active active:translate-y-2 transition-all duration-100 ease-in-out cursor-pointer select-none inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-kids-green {
+    @apply px-6 py-3 font-bold text-lg rounded-3xl bg-kids-green text-white border-2 border-slate-800 shadow-kids-green hover:translate-y-1 hover:shadow-kids-active active:translate-y-2 transition-all duration-100 ease-in-out cursor-pointer select-none inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-kids-purple {
+    @apply px-6 py-3 font-bold text-lg rounded-3xl bg-kids-purple text-white border-2 border-slate-800 shadow-kids-purple hover:translate-y-1 hover:shadow-kids-active active:translate-y-2 transition-all duration-100 ease-in-out cursor-pointer select-none inline-flex items-center justify-center gap-2;
+  }
+
+  /* Interactive Kids Card */
+  .card-kids {
+    @apply bg-white border-2 border-slate-800 rounded-3xl p-6 shadow-kids transition-all hover:-translate-y-1 hover:shadow-lg hover:border-slate-700 duration-200;
+  }
+
+  .card-kids-interactive {
+    @apply bg-white border-2 border-slate-800 rounded-3xl p-6 shadow-kids hover:translate-y-1 hover:shadow-kids-active transition-all cursor-pointer select-none duration-100;
+  }
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFBEB; /* kids-cream */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FB923C; /* kids-orange */
+  border-radius: 20px;
+  border: 3px solid #FFFBEB;
+}
+
+/* Custom visual styles */
+.bubbly-bg {
+  background-image: radial-gradient(#FDE047 1.5px, transparent 1.5px), radial-gradient(#FDE047 1.5px, #FFFBEB 1.5px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.cloud-svg {
+  filter: drop-shadow(0px 4px 0px rgba(0,0,0,0.05));
+}
