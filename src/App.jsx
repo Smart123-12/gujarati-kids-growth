@@ -10,6 +10,7 @@ import { SanskarZone } from './pages/SanskarZone';
 import { ParentDashboard } from './pages/ParentDashboard';
 import { AdminPanel } from './pages/AdminPanel';
 import { ChildNavbar } from './components/ChildNavbar';
+import { VisualClassroom } from './pages/VisualClassroom';
 
 // Gate to protect Kids paths (requires active child selected)
 const KidsRoute = ({ children }) => {
@@ -55,6 +56,7 @@ const RootRouter = () => {
       <Route path="/learning" element={<KidsRoute><LearningRoom /></KidsRoute>} />
       <Route path="/games" element={<KidsRoute><GamePark /></KidsRoute>} />
       <Route path="/sanskar" element={<KidsRoute><SanskarZone /></KidsRoute>} />
+      <Route path="/classroom" element={<KidsRoute><VisualClassroom /></KidsRoute>} />
 
       {/* Protected Parent Route */}
       <Route path="/parent" element={<ParentRoute><ParentDashboard /></ParentRoute>} />

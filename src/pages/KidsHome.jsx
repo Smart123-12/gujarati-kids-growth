@@ -325,6 +325,23 @@ export const KidsHome = () => {
               </div>
             </motion.div>
 
+            {/* GATEWAY 5: VISUAL CLASSROOM */}
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              onClick={() => { triggerAudio('click'); navigate('/classroom'); }}
+              className="bg-kids-purple-light border-3 border-slate-900 rounded-[32px] p-6 shadow-kids-purple hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between aspect-[1.3] relative overflow-hidden group select-none sm:col-span-2"
+            >
+              <div className="text-5xl">🎬</div>
+              <div>
+                <h4 className="text-2xl font-black text-slate-800">વિઝ્યુઅલ ક્લાસરૂમ</h4>
+                <p className="text-sm text-slate-600 font-bold mt-1">Visual Classroom</p>
+                <p className="text-xs text-slate-500 mt-2 font-medium">અવાજ, વિઝ્યુલાઇઝેશન અને એનિમેશન દ્વારા જ્ઞાન! (Not word only)</p>
+              </div>
+              <div className="absolute top-4 right-4 w-8 h-8 rounded-full border border-slate-900 bg-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                ➡️
+              </div>
+            </motion.div>
+
           </div>
 
           {/* Screen Time Progress Bar */}

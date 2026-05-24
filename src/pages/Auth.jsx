@@ -113,8 +113,28 @@ export const Auth = () => {
               transition={{ duration: 0.2 }}
             >
               <h2 className="text-3xl font-bold text-center text-slate-800 mb-2">માતા-પિતા નોંધણી (Parent Register)</h2>
-              <p className="text-center text-slate-500 mb-6">સૌ પ્રથમ તમારા બાળકનું એકાઉન્ટ બનાવવા રજીસ્ટ્રેશન કરો</p>
-              
+              <p className="text-center text-slate-500 mb-4">સૌ પ્રથમ તમારા બાળકનું એકાઉન્ટ બનાવવા રજીસ્ટ્રેશન કરો</p>
+
+              {/* Demo quick check */}
+              <div className="mb-6 p-4 bg-yellow-50 border-2 border-dashed border-yellow-400 rounded-2xl text-center select-none">
+                <p className="text-xs font-bold text-yellow-800 mb-2">💡 બિનજરૂરી રજીસ્ટ્રેશન ટાળવા ડેમો એકાઉન્ટ વાપરો:</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    triggerAudio('click');
+                    setError('');
+                    setScreen('parent-login');
+                    setTimeout(() => {
+                      setEmail('demo@parent.com');
+                      setPassword('demo123');
+                    }, 50);
+                  }}
+                  className="px-4 py-2 bg-yellow-400 text-yellow-950 font-black rounded-xl text-xs hover:bg-yellow-350 active:scale-95 transition-all shadow-sm border border-yellow-600"
+                >
+                  ડેમો લોગિન ઓપન કરો (Quick Demo) 🌟
+                </button>
+              </div>
+
               {error && <div className="p-3 bg-red-100 border-2 border-red-400 rounded-2xl text-red-700 font-bold text-center mb-4">{error}</div>}
 
               <form onSubmit={handleParentRegister} className="space-y-4">
@@ -206,7 +226,24 @@ export const Auth = () => {
               transition={{ duration: 0.2 }}
             >
               <h2 className="text-3xl font-bold text-center text-slate-800 mb-2">માતા-પિતા પ્રવેશ (Parent Login)</h2>
-              <p className="text-center text-slate-500 mb-6">પેરેન્ટ એકાઉન્ટમાં લોગિન કરવા લાયક માહિતી ભરો</p>
+              <p className="text-center text-slate-500 mb-4">પેરેન્ટ એકાઉન્ટમાં લોગિન કરવા લાયક માહિતી ભરો</p>
+
+              {/* Demo Quick Fill Banner */}
+              <div className="mb-6 p-4 bg-yellow-50 border-2 border-dashed border-yellow-400 rounded-2xl text-center select-none">
+                <p className="text-xs font-bold text-yellow-800 mb-2">💡 ડેમો ટેસ્ટિંગ માટેની વિગતો (Demo Credentials):</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    triggerAudio('click');
+                    setEmail('demo@parent.com');
+                    setPassword('demo123');
+                    setError('');
+                  }}
+                  className="px-4 py-2 bg-yellow-400 text-yellow-950 font-black rounded-xl text-xs hover:bg-yellow-350 active:scale-95 transition-all shadow-sm border border-yellow-600"
+                >
+                  અહીં ક્લિક કરો: ઓટો-ફિલ ડેમો એકાઉન્ટ 🌟
+                </button>
+              </div>
 
               {error && <div className="p-3 bg-red-100 border-2 border-red-400 rounded-2xl text-red-700 font-bold text-center mb-4">{error}</div>}
 

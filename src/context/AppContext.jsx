@@ -3,16 +3,57 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  // --- Parent Authentication State ---
+  // --- Parent Authentication State (Prepopulated with Demo account) ---
   const [parentUser, setParentUser] = useState(() => {
     const saved = localStorage.getItem('gkgw_parent');
-    return saved ? JSON.parse(saved) : null;
+    if (saved) return JSON.parse(saved);
+    
+    // Default Demo credentials
+    const demoParent = { email: 'demo@parent.com', name: 'ગોપાલભાઈ પટેલ (Gopalbhai)', password: 'demo123', pin: '1234' };
+    localStorage.setItem('gkgw_parent', JSON.stringify(demoParent));
+    return demoParent;
   });
 
-  // --- Child Profiles ---
+  // --- Child Profiles (Prepopulated with Demo children) ---
   const [childProfiles, setChildProfiles] = useState(() => {
     const saved = localStorage.getItem('gkgw_profiles');
-    return saved ? JSON.parse(saved) : [];
+    if (saved && JSON.parse(saved).length > 0) return JSON.parse(saved);
+    
+    // Default Demo Child Profiles
+    const demoProfiles = [
+      {
+        id: 'demo_child_lion',
+        name: 'ગુજુ સિંહ (Guju)',
+        age: 5,
+        avatar: 'avatar_lion',
+        stars: 180,
+        coins: 90,
+        level: 2,
+        streak: 3,
+        completedStories: ['s1'],
+        completedQuizzes: ['s1'],
+        gamesPlayed: 2,
+        checkedHabits: {},
+        badges: ['star_explorer', 'story_lover']
+      },
+      {
+        id: 'demo_child_monkey',
+        name: 'ચીકુ વાંદરો (Chiku)',
+        age: 6,
+        avatar: 'avatar_monkey',
+        stars: 320,
+        coins: 160,
+        level: 4,
+        streak: 5,
+        completedStories: ['s1', 's2', 's3'],
+        completedQuizzes: ['s1', 's2'],
+        gamesPlayed: 5,
+        checkedHabits: {},
+        badges: ['star_explorer', 'star_champion', 'game_master']
+      }
+    ];
+    localStorage.setItem('gkgw_profiles', JSON.stringify(demoProfiles));
+    return demoProfiles;
   });
 
   // --- Active Selected Child ID ---
